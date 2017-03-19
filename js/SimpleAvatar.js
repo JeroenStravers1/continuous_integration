@@ -6,7 +6,16 @@ define(function(){
 		this.speed =5;
 		this.top = 50;
 		this.left = 50;
-
+		
+		// to be upgraded at the shop
+		this.ammoUpgradeLevel = 0;
+				
+		this.ammoAmount = 0;
+		
+		this.gold = 0;
+		
+		this.hitPoints = 3;
+		
 		this.$el.css({top:this.top,left:this.left});
 		opts.$body.append(this.$el);
 	}

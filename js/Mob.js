@@ -7,6 +7,8 @@ function(Agent,
 		constructor: function(options){
 			options = options || {};
 			this.targetAgent = options.targetAgent;
+			
+			this.hitPoints = 20;
 
 			Agent.prototype.constructor.call(this,options);
 
@@ -60,6 +62,11 @@ function(Agent,
 
 		},
 		chooseAction: function(){
+			if( this.hitPoints <= 0 ) {
+				// TODO: implement monster death
+				alert ("yay I am dead");
+				this.hitPoints = 1;
+			}
 			if(
 				Math.abs(this.position.y - this.targetAgent.position.y) < 1
 				&&
